@@ -64,7 +64,14 @@ flutter:
   assets:
     - lib/images/landscape.jpg
     - lib/images/big-one.jpg
+    - lib/category_icons/icons8-ask-question-64.png
+    - lib/category_icons/icons8-camera-64.png
+    - lib/category_icons/icons8-moon-and-stars-64.png
+    - lib/category_icons/icons8-music-64.png
+    - lib/images/browser.jpg
+    - lib/images/landscape-photography-13.jpg
 
+    
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 

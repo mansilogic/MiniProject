@@ -3,55 +3,74 @@ import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 
 class CarsouselSlider extends StatefulWidget {
-  const CarsouselSlider({super.key});
+  const CarsouselSlider({Key? key}) : super(key: key);
 
   @override
   State<CarsouselSlider> createState() => _CarsouselSliderState();
 }
 
 class _CarsouselSliderState extends State<CarsouselSlider> {
-  final List<Widget> items = [
-    Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(15),
-        image: const DecorationImage(
-          image: AssetImage('lib/images/landscape.jpg'),
-          fit: BoxFit.cover,
-        ),
-      ),
-    ),
-    Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        image: const DecorationImage(
-          image: AssetImage('lib/images/big-one.jpg'),
-          fit: BoxFit.cover,
-        ),
-      ),
-    ),
-    Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        image: const DecorationImage(
-          image: AssetImage('lib/images/landscape.jpg'),
-          fit: BoxFit.cover,
-        ),
-      ),
-    ),
-    Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        image: const DecorationImage(
-          image: AssetImage('lib/images/big-one.jpg'),
-          fit: BoxFit.cover,
-        ),
-      ),
-    ),
+  final List<String> imagePaths = [
+    'lib/images/landscape.jpg',
+    'lib/images/big-one.jpg',
   ];
 
   int currentIndex = 0;
+  Decoration imageDecoration(String imagePath) {
+    return BoxDecoration(
+      borderRadius: BorderRadius.circular(15),
+      image: DecorationImage(
+        image: AssetImage(imagePath),
+        fit: BoxFit.cover,
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
+    final List<Widget> items = imagePaths.map((imagePath) {
+      return Container(
+        decoration: imageDecoration(imagePath),
+        child: Stack(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Align(
+                alignment: Alignment.bottomRight,
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    const Expanded(
+                      child: Text(
+                        'hello...Good Morning',
+                        style: TextStyle(color: Colors.white),
+                        textAlign: TextAlign.right,
+                      ),
+                    ),
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          textStyle: const TextStyle(fontSize: 18),
+                          backgroundColor: Colors.black.withOpacity(0.05),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(30.0),
+                          ),
+                          minimumSize: const Size.fromRadius(2)),
+                      onPressed: () {
+                        print('Button clicked index number : $currentIndex');
+                      },
+                      child: const Text(
+                        '>',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      );
+    }).toList();
     return Column(
       children: [
         CarouselSlider(
@@ -71,6 +90,9 @@ class _CarsouselSliderState extends State<CarsouselSlider> {
               });
             },
           ),
+        ),
+        const SizedBox(
+          height: 10,
         ),
         DotsIndicator(
           dotsCount: items.length,

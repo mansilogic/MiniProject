@@ -16,9 +16,13 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
-    _tabs = [Home(), Login(), Registration(), Settings()];
+    _tabs = [
+      const Home(),
+      const Login(),
+      const Registration(),
+      const Settings()
+    ];
   }
 
   @override
@@ -28,7 +32,6 @@ class _HomeScreenState extends State<HomeScreen> {
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
         type: BottomNavigationBarType.fixed,
-        // backgroundColor: const Color.fromARGB(255, 127, 199, 119),
         unselectedItemColor: Colors.grey,
         selectedItemColor: Colors.green,
         onTap: (int index) {

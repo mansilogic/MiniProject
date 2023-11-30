@@ -105,7 +105,7 @@ class _RegistrationState extends State<Registration> {
                                     color: Colors.black87,
                                     fontFamily: 'ABeeZee'),
                               ),
-                              const SizedBox(width: 10),
+                              SizedBox(width: 10),
                             ],
                           ),
                           TextFormField(
@@ -142,7 +142,7 @@ class _RegistrationState extends State<Registration> {
                                     color: Colors.black87,
                                     fontFamily: 'ABeeZee'),
                               ),
-                              const SizedBox(width: 10),
+                              SizedBox(width: 10),
                             ],
                           ),
                           TextFormField(
@@ -192,6 +192,7 @@ class _RegistrationState extends State<Registration> {
                               if (value.length < 3) {
                                 return 'Must be more than 2 Characters';
                               }
+                              return null;
                             },
                             decoration: const InputDecoration(
                                 prefixIcon: Icon(Icons.password),
@@ -246,7 +247,7 @@ class _RegistrationState extends State<Registration> {
                               onPressed: () {},
                               style: ElevatedButton.styleFrom(
                                   textStyle: const TextStyle(fontSize: 18),
-                                  primary: Colors.green,
+                                  backgroundColor: Colors.green,
                                   elevation: 3),
                               child: const Text(
                                 'Sign Up',

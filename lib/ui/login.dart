@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_const
+
 import 'package:flutter/material.dart';
 
 class Login extends StatefulWidget {
@@ -12,7 +14,7 @@ class _LoginState extends State<Login> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: SingleChildScrollView(
-        child: Container(
+        child: SizedBox(
           height: MediaQuery.of(context).size.height,
           width: double.infinity,
           child: Column(
@@ -48,7 +50,7 @@ class _LoginState extends State<Login> {
                           const SizedBox(
                             height: 10,
                           ),
-                          Text('WELCOME!!'),
+                          const Text('WELCOME!!'),
                           const SizedBox(
                             height: 10,
                           ),
@@ -115,6 +117,7 @@ class _LoginState extends State<Login> {
                               if (value.length < 3) {
                                 return 'Must be more than 2 Characters';
                               }
+                              return null;
                             },
                             decoration: const InputDecoration(
                                 prefixIcon: Icon(Icons.password),
@@ -133,7 +136,7 @@ class _LoginState extends State<Login> {
                           const SizedBox(
                             height: 10,
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 2,
                           ),
                           const Row(
@@ -147,8 +150,8 @@ class _LoginState extends State<Login> {
                           ElevatedButton(
                               onPressed: () {},
                               style: ElevatedButton.styleFrom(
-                                  textStyle: TextStyle(fontSize: 20),
-                                  primary: Colors.green,
+                                  textStyle: const TextStyle(fontSize: 20),
+                                  backgroundColor: Colors.green,
                                   elevation: 3),
                               child: const Text('Log In'))
                         ]),

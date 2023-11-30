@@ -16,7 +16,7 @@ class _SettingsState extends State<Settings> {
         primarySwatch: Colors.green,
         scaffoldBackgroundColor: Colors.white,
         appBarTheme: const AppBarTheme(
-          backgroundColor: Color.fromARGB(255, 122, 226, 112),
+          backgroundColor: Color.fromARGB(255, 100, 189, 92),
           elevation: 0,
           centerTitle: true,
         ),
@@ -29,7 +29,7 @@ class _SettingsState extends State<Settings> {
           ),
         ),
         body: Container(
-          padding: EdgeInsets.symmetric(vertical: 22, horizontal: 25),
+          padding: const EdgeInsets.symmetric(vertical: 22, horizontal: 25),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -70,129 +70,70 @@ class _SettingsState extends State<Settings> {
                 thickness: 1,
               ),
               const SizedBox(
-                height: 22,
+                height: 15,
               ),
               Row(
                 children: [
-                  const Icon(Icons.dark_mode),
-                  const SizedBox(
-                    width: 22,
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      setState(() {});
-                    },
-                    child: const Text(
-                      'Themes',
-                      style: TextStyle(
-                          fontSize: 20,
-                          color: Colors.black87,
-                          fontFamily: 'ABeeZee',
-                          fontWeight: FontWeight.w400),
-                    ),
-                  ),
+                  _menuItem(
+                      title: "Themes", icon: Icons.dark_mode, onTap: () {}),
                 ],
               ),
-              const SizedBox(
-                height: 30,
-              ),
               Row(
                 children: [
-                  const Icon(Icons.dashboard),
-                  const SizedBox(
-                    width: 22,
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      setState(() {});
-                    },
-                    child: const Text(
-                      'Dashboard',
-                      style: TextStyle(
-                          fontSize: 20,
-                          color: Colors.black87,
-                          fontFamily: 'ABeeZee',
-                          fontWeight: FontWeight.w400),
-                    ),
-                  ),
+                  _menuItem(title: "Dashboard", icon: Icons.home, onTap: () {}),
                 ],
               ),
-              const SizedBox(
-                height: 30,
-              ),
               Row(
                 children: [
-                  const Icon(Icons.person),
-                  const SizedBox(
-                    width: 22,
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      setState(() {});
-                    },
-                    child: const Text(
-                      'LogIn',
-                      style: TextStyle(
-                          fontSize: 20,
-                          color: Colors.black87,
-                          fontFamily: 'ABeeZee',
-                          fontWeight: FontWeight.w400),
-                    ),
-                  ),
+                  _menuItem(title: "Login", icon: Icons.person, onTap: () {}),
                 ],
               ),
-              const SizedBox(
-                height: 30,
-              ),
               Row(
                 children: [
-                  const Icon(Icons.app_registration),
-                  const SizedBox(
-                    width: 22,
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      setState(() {});
-                    },
-                    child: const Text(
-                      'Register',
-                      style: TextStyle(
-                          fontSize: 20,
-                          color: Colors.black87,
-                          fontFamily: 'ABeeZee',
-                          fontWeight: FontWeight.w400),
-                    ),
-                  ),
+                  _menuItem(
+                      title: "Register",
+                      icon: Icons.app_registration,
+                      onTap: () {}),
                 ],
               ),
-              const SizedBox(
-                height: 30,
-              ),
               Row(
                 children: [
-                  const Icon(Icons.question_answer),
-                  const SizedBox(
-                    width: 22,
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      setState(() {});
-                    },
-                    child: const Text(
-                      'About',
-                      style: TextStyle(
-                          fontSize: 20,
-                          color: Colors.black87,
-                          fontFamily: 'ABeeZee',
-                          fontWeight: FontWeight.w400),
-                    ),
-                  ),
+                  _menuItem(
+                      title: "About",
+                      icon: Icons.question_answer,
+                      onTap: () {}),
                 ],
               ),
             ],
           ),
         ),
       ),
+    );
+  }
+
+  _menuItem(
+      {required String title,
+      required IconData icon,
+      required Function onTap}) {
+    return GestureDetector(
+      onTap: () {},
+      child: Container(
+          padding: const EdgeInsets.symmetric(vertical: 18),
+          child: Row(
+            children: [
+              Icon(
+                icon,
+                size: 18,
+              ),
+              const SizedBox(width: 15),
+              Text(title,
+                  style: const TextStyle(
+                    fontFamily: 'ABeeZee',
+                    fontSize: 18,
+                    fontWeight: FontWeight.w600,
+                  ))
+            ],
+          )),
     );
   }
 }
