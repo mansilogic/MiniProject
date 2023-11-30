@@ -13,6 +13,8 @@ class _CarsouselSliderState extends State<CarsouselSlider> {
   final List<String> imagePaths = [
     'lib/images/landscape.jpg',
     'lib/images/big-one.jpg',
+    'lib/images/landscape-photography-13.jpg',
+    'lib/images/browser.jpg'
   ];
 
   int currentIndex = 0;
@@ -42,8 +44,11 @@ class _CarsouselSliderState extends State<CarsouselSlider> {
                   children: [
                     const Expanded(
                       child: Text(
-                        'hello...Good Morning',
-                        style: TextStyle(color: Colors.white),
+                        '',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold),
                         textAlign: TextAlign.right,
                       ),
                     ),
@@ -51,16 +56,14 @@ class _CarsouselSliderState extends State<CarsouselSlider> {
                       style: ElevatedButton.styleFrom(
                           textStyle: const TextStyle(fontSize: 18),
                           backgroundColor: Colors.black.withOpacity(0.05),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(30.0),
-                          ),
+                          shape: CircleBorder(),
                           minimumSize: const Size.fromRadius(2)),
                       onPressed: () {
                         print('Button clicked index number : $currentIndex');
                       },
                       child: const Text(
                         '>',
-                        style: TextStyle(color: Colors.white),
+                        style: TextStyle(color: Colors.white, fontSize: 22),
                       ),
                     ),
                   ],

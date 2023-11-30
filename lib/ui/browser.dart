@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
 
 class BrowserList extends StatefulWidget {
@@ -62,7 +60,6 @@ class _BrowserListState extends State<BrowserList> {
       ],
     );
   }
-
   manageList() {
     for (int i = 0; i < browserImages.length; i++) {
       newsList
@@ -84,23 +81,32 @@ class _BrowserListState extends State<BrowserList> {
           ),
           margin: const EdgeInsets.symmetric(vertical: 10),
         ),
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 5),
-          child: Align(
-            alignment: Alignment.topRight,
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.black.withOpacity(0),
-                      shape: const CircleBorder(),
-                      padding: EdgeInsets.all(10),
-                      minimumSize: const Size.fromRadius(2)),
-                  onPressed: () {},
-                  child: const Icon(Icons.redeem_sharp),
-                ),
-              ],
+        Positioned(
+          top: 16,
+          right: 10,
+          child: ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.black.withOpacity(0),
+              shape: const CircleBorder(),
+              padding: EdgeInsets.all(10),
+              minimumSize: const Size.fromRadius(2),
+            ),
+            onPressed: () {},
+            child: const Icon(Icons.redeem_sharp),
+          ),
+        ),
+        Positioned(
+          bottom: 16,
+          right: 10,
+          child: GestureDetector(
+            onTap: () {},
+            child: const Text(
+              'See More...',
+              style: TextStyle(
+                  fontFamily: 'ABeeZee',
+                  fontSize: 20,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold),
             ),
           ),
         ),
