@@ -56,13 +56,14 @@ class _CarsouselSliderState extends State<CarsouselSlider> {
                       style: ElevatedButton.styleFrom(
                           textStyle: const TextStyle(fontSize: 18),
                           backgroundColor: Colors.black.withOpacity(0.05),
-                          shape: CircleBorder(),
+                          shape: const CircleBorder(),
                           minimumSize: const Size.fromRadius(2)),
                       onPressed: () {
+                        // ignore: avoid_print
                         print('Button clicked index number : $currentIndex');
                       },
                       child: const Text(
-                        '>',
+                        'swipe',
                         style: TextStyle(color: Colors.white, fontSize: 22),
                       ),
                     ),

@@ -60,6 +60,7 @@ class _BrowserListState extends State<BrowserList> {
       ],
     );
   }
+
   manageList() {
     for (int i = 0; i < browserImages.length; i++) {
       newsList
@@ -88,7 +89,7 @@ class _BrowserListState extends State<BrowserList> {
             style: ElevatedButton.styleFrom(
               backgroundColor: Colors.black.withOpacity(0),
               shape: const CircleBorder(),
-              padding: EdgeInsets.all(10),
+              padding: const EdgeInsets.all(10),
               minimumSize: const Size.fromRadius(2),
             ),
             onPressed: () {},
