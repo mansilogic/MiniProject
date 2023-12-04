@@ -13,19 +13,19 @@ class _CategoryListState extends State<CategoryList> {
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
         _category(
-          'lib/category_icons/icons8-ask-question-64.png',
+          'assets/category_icons/ic_query.png',
           'Query',
         ),
         _category(
-          'lib/category_icons/icons8-camera-64.png',
+          'assets/category_icons/ic_camera.png',
           'Camera',
         ),
         _category(
-          'lib/category_icons/icons8-moon-and-stars-64.png',
+          'assets/category_icons/ic_theme.png',
           'Theme',
         ),
         _category(
-          'lib/category_icons/icons8-music-64.png',
+          'assets/category_icons/ic_music.png',
           'Music',
         ),
       ],

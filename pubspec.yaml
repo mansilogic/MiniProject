@@ -38,6 +38,7 @@ dependencies:
   carousel_slider: ^4.2.1
   dots_indicator: ^3.0.0
   shimmer: ^3.0.0
+  sizer: ^2.0.15
 
 dev_dependencies:
   flutter_test:
@@ -63,14 +64,10 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - lib/images/landscape.jpg
-    - lib/images/big-one.jpg
-    - lib/category_icons/icons8-ask-question-64.png
-    - lib/category_icons/icons8-camera-64.png
-    - lib/category_icons/icons8-moon-and-stars-64.png
-    - lib/category_icons/icons8-music-64.png
-    - lib/images/browser.jpg
-    - lib/images/landscape-photography-13.jpg
+    - assets/category_icons/
+    - assets/fonts/
+    - assets/images/
+    
 
     
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -87,8 +84,8 @@ flutter:
   fonts:
     - family: ABeeZee
       fonts:
-        - asset: lib\fonts\ABeeZee-Italic.ttf
-        - asset: lib\fonts\ABeeZee-Regular.ttf
+        - asset: assets\fonts\ABeeZee-Italic.ttf
+        - asset: assets\fonts\ABeeZee-Regular.ttf
           style: normal
           weight: 700
     # - family: Trajan Pro

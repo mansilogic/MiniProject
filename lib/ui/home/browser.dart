@@ -1,4 +1,7 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 class BrowserList extends StatefulWidget {
   const BrowserList({Key? key}) : super(key: key);
@@ -10,9 +13,9 @@ class BrowserList extends StatefulWidget {
 class _BrowserListState extends State<BrowserList> {
   List<Widget> newsList = [];
   List<String> browserImages = [
-    'lib/images/browser.jpg',
-    'lib/images/big-one.jpg',
-    'lib/images/landscape-photography-13.jpg'
+    'assets/images/img_bigone.jpg',
+    'assets/images/img_browser.jpg',
+    'assets/images/img_landscape.jpg'
   ];
 
   @override
@@ -27,7 +30,7 @@ class _BrowserListState extends State<BrowserList> {
       children: [
         const Divider(
           color: Color.fromARGB(255, 231, 227, 227),
-          height: 22,
+          height: 20,
           thickness: 1,
         ),
         Row(
@@ -43,7 +46,7 @@ class _BrowserListState extends State<BrowserList> {
             ),
             InkWell(
               onTap: () {},
-              child: const Text(
+              child: Text(
                 "Filter",
                 style: TextStyle(
                   fontWeight: FontWeight.w600,
@@ -80,7 +83,7 @@ class _BrowserListState extends State<BrowserList> {
               image: AssetImage(imagePath),
             ),
           ),
-          margin: const EdgeInsets.symmetric(vertical: 10),
+          margin: EdgeInsets.symmetric(vertical: 10),
         ),
         Positioned(
           top: 16,
@@ -89,7 +92,7 @@ class _BrowserListState extends State<BrowserList> {
             style: ElevatedButton.styleFrom(
               backgroundColor: Colors.black.withOpacity(0),
               shape: const CircleBorder(),
-              padding: const EdgeInsets.all(10),
+              padding: EdgeInsets.all(10),
               minimumSize: const Size.fromRadius(2),
             ),
             onPressed: () {},
@@ -101,7 +104,7 @@ class _BrowserListState extends State<BrowserList> {
           right: 10,
           child: GestureDetector(
             onTap: () {},
-            child: const Text(
+            child: Text(
               'See More...',
               style: TextStyle(
                   fontFamily: 'ABeeZee',

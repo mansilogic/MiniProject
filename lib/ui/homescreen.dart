@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:miniproject1/ui/home.dart';
-import 'package:miniproject1/ui/login.dart';
-import 'package:miniproject1/ui/registration.dart';
+import 'package:miniproject1/ui/home/home.dart';
+import 'package:miniproject1/ui/auth/login.dart';
+import 'package:miniproject1/ui/auth/registration.dart';
 import 'package:miniproject1/ui/settings.dart';
 
 class HomeScreen extends StatefulWidget {

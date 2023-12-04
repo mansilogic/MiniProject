@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:miniproject1/ui/browser.dart';
-import 'package:miniproject1/ui/carsousel-slider.dart';
-import 'package:miniproject1/ui/category.dart';
+import 'package:miniproject1/ui/home/browser.dart';
+import 'package:miniproject1/ui/home/carsousel-slider.dart';
+import 'package:miniproject1/ui/home/category.dart';
 import 'package:shimmer/shimmer.dart';
 
 class ShimmerEffect extends StatefulWidget {
@@ -10,6 +10,7 @@ class ShimmerEffect extends StatefulWidget {
   const ShimmerEffect({Key? key, required this.content}) : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _ShimmerState createState() => _ShimmerState();
 }
 

@@ -6,7 +6,6 @@ class Settings extends StatefulWidget {
   @override
   State<Settings> createState() => _SettingsState();
 }
-
 class _SettingsState extends State<Settings> {
   @override
   Widget build(BuildContext context) {
@@ -78,6 +77,7 @@ class _SettingsState extends State<Settings> {
                       title: "Themes", icon: Icons.dark_mode, onTap: () {}),
                 ],
               ),
+              
               Row(
                 children: [
                   _menuItem(title: "Dashboard", icon: Icons.home, onTap: () {}),

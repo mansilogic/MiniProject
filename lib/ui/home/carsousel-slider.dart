@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 class CarsouselSlider extends StatefulWidget {
   const CarsouselSlider({Key? key}) : super(key: key);
@@ -11,10 +12,10 @@ class CarsouselSlider extends StatefulWidget {
 
 class _CarsouselSliderState extends State<CarsouselSlider> {
   final List<String> imagePaths = [
-    'lib/images/landscape.jpg',
-    'lib/images/big-one.jpg',
-    'lib/images/landscape-photography-13.jpg',
-    'lib/images/browser.jpg'
+    'assets/images/img_landscape.jpg',
+    'assets/images/img_bigone.jpg',
+    'assets/images/img_green.jpg',
+    'assets/images/img_browser.jpg'
   ];
 
   int currentIndex = 0;
