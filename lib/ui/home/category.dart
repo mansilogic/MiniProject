@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:miniproject1/ui/export_ui.dart';
 
 class CategoryList extends StatefulWidget {
   const CategoryList({Key? key}) : super(key: key);
@@ -13,19 +13,19 @@ class _CategoryListState extends State<CategoryList> {
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
         _category(
-          'assets/category_icons/ic_query.png',
+          'assets/icons/ic_query.png',
           'Query',
         ),
         _category(
-          'assets/category_icons/ic_camera.png',
+          'assets/icons/ic_camera.png',
           'Camera',
         ),
         _category(
-          'assets/category_icons/ic_theme.png',
+          'assets/icons/ic_theme.png',
           'Theme',
         ),
         _category(
-          'assets/category_icons/ic_music.png',
+          'assets/icons/ic_music.png',
           'Music',
         ),
       ],

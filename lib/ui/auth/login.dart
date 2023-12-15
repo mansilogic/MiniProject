@@ -1,6 +1,7 @@
 // ignore_for_file: unnecessary_const
-
 import 'package:flutter/material.dart';
+import 'package:miniproject1/utils/export_utils.dart';
+import 'package:miniproject1/widgets/export_widgets.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -10,7 +11,7 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
-  @override
+ @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: SingleChildScrollView(
@@ -23,7 +24,6 @@ class _LoginState extends State<Login> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Form(
-                      // key: _formKey,
                       child: Column(
                     children: [
                       const Column(
@@ -59,80 +59,37 @@ class _LoginState extends State<Login> {
                           ),
                           const Row(
                             children: [
-                              Text(
-                                'Email',
-                                style: TextStyle(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w500,
-                                    color: Colors.black87,
-                                    fontFamily: 'ABeeZee'),
+                              CustomText(
+                                text: 'Email',
+                                fontSize: 18,
                               ),
                               const SizedBox(width: 10),
                             ],
                           ),
-                          TextFormField(
+                          CustomTextFormField(
                             keyboardType: TextInputType.emailAddress,
-                            validator: (value) {
-                              if (value!.isEmpty ||
-                                  !RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
-                                      .hasMatch(value)) {
-                                return 'Enter a valid email!';
-                              }
-                              return null;
-                            },
-                            decoration: const InputDecoration(
-                                prefixIcon: Icon(Icons.email),
-                                enabledBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: Colors.grey,
-                                  ),
-                                ),
-                                contentPadding: EdgeInsets.all(5),
-                                border: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                  color: Colors.grey,
-                                ))),
+                            labelText: 'Email',
+                            prefixIcon: Icons.email,
+                            obscureText: false,
+                            validator: emailValidator,
                           ),
                           const SizedBox(
                             height: 10,
                           ),
                           const Row(
                             children: [
-                              Text(
-                                'Password',
-                                style: TextStyle(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w500,
-                                    color: Colors.black87,
-                                    fontFamily: 'ABeeZee'),
-                              ),
+                              CustomText(
+                                text: 'Password',
+                                fontSize: 18,
+                              )
                             ],
                           ),
-                          TextFormField(
-                            obscureText: true,
-                            validator: (value) {
-                              if (value!.isEmpty) {
-                                return 'Please enter password';
-                              }
-                              if (value.length < 3) {
-                                return 'Must be more than 2 Characters';
-                              }
-                              return null;
-                            },
-                            decoration: const InputDecoration(
-                                prefixIcon: Icon(Icons.password),
-                                suffixIcon: Icon(Icons.remove_red_eye),
-                                enabledBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: Colors.grey,
-                                  ),
-                                ),
-                                contentPadding: EdgeInsets.all(5),
-                                border: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                  color: Colors.grey,
-                                ))),
-                          ),
+                          CustomTextFormField(
+                              keyboardType: TextInputType.text,
+                              labelText: 'Password',
+                              prefixIcon: Icons.password,
+                              obscureText: true,
+                              validator: passwordValidator),
                           const SizedBox(
                             height: 10,
                           ),
@@ -147,13 +104,8 @@ class _LoginState extends State<Login> {
                               )
                             ],
                           ),
-                          ElevatedButton(
-                              onPressed: () {},
-                              style: ElevatedButton.styleFrom(
-                                  textStyle: const TextStyle(fontSize: 20),
-                                  backgroundColor: Colors.green,
-                                  elevation: 3),
-                              child: const Text('Log In'))
+                          CustomElevatedButton(
+                              onPressed: () {}, text: 'Sign Up'),
                         ]),
                       )
                     ],

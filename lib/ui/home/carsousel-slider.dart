@@ -1,7 +1,5 @@
-import 'package:carousel_slider/carousel_slider.dart';
-import 'package:dots_indicator/dots_indicator.dart';
-import 'package:flutter/material.dart';
-import 'package:sizer/sizer.dart';
+import 'package:miniproject1/ui/export_ui.dart';
+import 'package:miniproject1/utils/export_utils.dart';
 
 class CarsouselSlider extends StatefulWidget {
   const CarsouselSlider({Key? key}) : super(key: key);
@@ -11,14 +9,6 @@ class CarsouselSlider extends StatefulWidget {
 }
 
 class _CarsouselSliderState extends State<CarsouselSlider> {
-  final List<String> imagePaths = [
-    'assets/images/img_landscape.jpg',
-    'assets/images/img_bigone.jpg',
-    'assets/images/img_green.jpg',
-    'assets/images/img_browser.jpg'
-  ];
-
-  int currentIndex = 0;
   Decoration imageDecoration(String imagePath) {
     return BoxDecoration(
       borderRadius: BorderRadius.circular(15),
@@ -43,16 +33,6 @@ class _CarsouselSliderState extends State<CarsouselSlider> {
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    const Expanded(
-                      child: Text(
-                        '',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold),
-                        textAlign: TextAlign.right,
-                      ),
-                    ),
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
                           textStyle: const TextStyle(fontSize: 18),

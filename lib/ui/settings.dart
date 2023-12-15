@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:miniproject1/widgets/export_widgets.dart';
 
 class Settings extends StatefulWidget {
   const Settings({super.key});
@@ -6,6 +7,7 @@ class Settings extends StatefulWidget {
   @override
   State<Settings> createState() => _SettingsState();
 }
+
 class _SettingsState extends State<Settings> {
   @override
   Widget build(BuildContext context) {
@@ -51,14 +53,11 @@ class _SettingsState extends State<Settings> {
                             fontFamily: 'ABeeZee',
                             fontWeight: FontWeight.bold),
                       ),
-                      Text(
-                        'Flutter Developer',
-                        style: TextStyle(
-                            fontSize: 16,
-                            color: Colors.black,
-                            fontFamily: 'ABeeZee',
-                            fontWeight: FontWeight.w100),
-                      ),
+                      CustomText(
+                        text: 'Flutter Developer',
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500,
+                      )
                     ],
                   ),
                 ],
@@ -77,7 +76,6 @@ class _SettingsState extends State<Settings> {
                       title: "Themes", icon: Icons.dark_mode, onTap: () {}),
                 ],
               ),
-              
               Row(
                 children: [
                   _menuItem(title: "Dashboard", icon: Icons.home, onTap: () {}),
@@ -111,7 +109,7 @@ class _SettingsState extends State<Settings> {
     );
   }
 
-  _menuItem(
+  dynamic _menuItem(
       {required String title,
       required IconData icon,
       required Function onTap}) {

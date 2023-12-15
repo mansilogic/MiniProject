@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:miniproject1/utils/export_utils.dart';
+import 'package:miniproject1/widgets/export_widgets.dart';
 
 class Registration extends StatefulWidget {
   const Registration({super.key});
@@ -59,200 +61,88 @@ class _RegistrationState extends State<Registration> {
                           ),
                           const Row(
                             children: [
-                              Text(
-                                'Name',
-                                style: TextStyle(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w500,
-                                    color: Colors.black87,
-                                    fontFamily: 'ABeeZee'),
+                              CustomText(
+                                text: 'Name',
+                                fontSize: 18,
                               ),
                               SizedBox(width: 10),
                             ],
                           ),
-                          TextFormField(
-                            keyboardType: TextInputType.name,
-                            validator: (value) {
-                              if (value!.isEmpty ||
-                                  !RegExp(r'^[a-z A-Z]+$').hasMatch(value)) {
-                                return "Enter Correct Name";
-                              }
-                              return null;
-                            },
-                            decoration: const InputDecoration(
-                                prefixIcon: Icon(Icons.person),
-                                enabledBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: Colors.grey,
-                                  ),
-                                ),
-                                contentPadding: EdgeInsets.all(5),
-                                border: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                  color: Colors.grey,
-                                ))),
-                          ),
+                          CustomTextFormField(
+                              keyboardType: TextInputType.name,
+                              labelText: 'Name',
+                              prefixIcon: Icons.person,
+                              obscureText: false,
+                              validator: nameValidator),
                           const SizedBox(
                             height: 10,
                           ),
                           const Row(
                             children: [
-                              Text(
-                                'Phone Number',
-                                style: TextStyle(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w500,
-                                    color: Colors.black87,
-                                    fontFamily: 'ABeeZee'),
-                              ),
+                              CustomText(text: 'phone number', fontSize: 18),
                               SizedBox(width: 10),
                             ],
                           ),
-                          TextFormField(
-                            keyboardType: TextInputType.phone,
-                            validator: (value) {
-                              if (value == null || value.length != 10) {
-                                return 'Please enter phone number';
-                              }
-                              return null;
-                            },
-                            decoration: const InputDecoration(
-                                prefixIcon: Icon(Icons.phone),
-                                enabledBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: Colors.grey,
-                                  ),
-                                ),
-                                contentPadding: EdgeInsets.all(5),
-                                border: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                  color: Colors.grey,
-                                ))),
-                          ),
+                          CustomTextFormField(
+                              keyboardType: TextInputType.phone,
+                              labelText: 'Phone Number',
+                              prefixIcon: Icons.phone,
+                              obscureText: false,
+                              validator: phoneValidator),
                           const SizedBox(
                             height: 10,
                           ),
                           const Row(
                             children: [
-                              Text(
-                                'Email',
-                                style: TextStyle(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w500,
-                                    color: Colors.black87,
-                                    fontFamily: 'ABeeZee'),
-                              ),
+                              CustomText(text: 'email', fontSize: 18),
                               SizedBox(width: 10),
                             ],
                           ),
-                          TextFormField(
-                            keyboardType: TextInputType.emailAddress,
-                            validator: (value) {
-                              if (value!.isEmpty ||
-                                  !RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
-                                      .hasMatch(value)) {
-                                return 'Enter a valid email!';
-                              }
-                              return null;
-                            },
-                            decoration: const InputDecoration(
-                                prefixIcon: Icon(Icons.email),
-                                enabledBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: Colors.grey,
-                                  ),
-                                ),
-                                contentPadding: EdgeInsets.all(5),
-                                border: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                  color: Colors.grey,
-                                ))),
-                          ),
+                          CustomTextFormField(
+                              keyboardType: TextInputType.emailAddress,
+                              labelText: 'Email',
+                              prefixIcon: Icons.email,
+                              obscureText: false,
+                              validator: emailValidator),
                           const SizedBox(
                             height: 10,
                           ),
                           const Row(
                             children: [
-                              Text(
-                                'Password',
-                                style: TextStyle(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w500,
-                                    color: Colors.black87,
-                                    fontFamily: 'ABeeZee'),
-                              ),
+                              CustomText(text: 'Password', fontSize: 18),
                             ],
                           ),
-                          TextFormField(
+                          CustomTextFormField(
+                              keyboardType: TextInputType.text,
+                              labelText: 'Password',
+                              prefixIcon: Icons.password,
+                              obscureText: true,
+                              validator: passwordValidator),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          const Row(
+                            children: [
+                              CustomText(
+                                text: 'Confirm Password',
+                                fontSize: 18,
+                              )
+                            ],
+                          ),
+                          CustomTextFormField(
+                            keyboardType: TextInputType.text,
+                            labelText: 'Confirm Password',
+                            prefixIcon: Icons.lock,
                             obscureText: true,
-                            validator: (value) {
-                              if (value!.isEmpty) {
-                                return 'Please enter password';
-                              }
-                              if (value.length < 3) {
-                                return 'Must be more than 2 Characters';
-                              }
-                              return null;
-                            },
-                            decoration: const InputDecoration(
-                                prefixIcon: Icon(Icons.password),
-                                suffixIcon: Icon(Icons.remove_red_eye),
-                                enabledBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: Colors.grey,
-                                  ),
-                                ),
-                                contentPadding: EdgeInsets.all(5),
-                                border: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                  color: Colors.grey,
-                                ))),
-                          ),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          const Row(
-                            children: [
-                              Text(
-                                'Confirm Password',
-                                style: TextStyle(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w500,
-                                    color: Colors.black87,
-                                    fontFamily: 'ABeeZee'),
-                              ),
-                            ],
-                          ),
-                          TextFormField(
-                            obscureText: true,
-                            validator: (value) {},
-                            decoration: const InputDecoration(
-                                prefixIcon: Icon(Icons.lock),
-                                suffixIcon: Icon(Icons.remove_red_eye),
-                                enabledBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: Colors.grey,
-                                  ),
-                                ),
-                                contentPadding: EdgeInsets.all(5),
-                                border: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                  color: Colors.grey,
-                                ))),
+                            validator: passwordValidator,
                           ),
                           const SizedBox(
                             height: 25,
                           ),
-                          ElevatedButton(
-                              onPressed: () {},
-                              style: ElevatedButton.styleFrom(
-                                  textStyle: const TextStyle(fontSize: 18),
-                                  backgroundColor: Colors.green,
-                                  elevation: 3),
-                              child: const Text(
-                                'Sign Up',
-                                style: TextStyle(fontFamily: 'ABeeZee'),
-                              ))
+                          CustomElevatedButton(
+                            onPressed: () {},
+                            text: 'Sign Up',
+                          )
                         ]),
                       )
                     ],

@@ -1,7 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:sizer/sizer.dart';
+import 'package:miniproject1/widgets/export_widgets.dart';
+import 'package:miniproject1/utils/export_utils.dart';
 
 class BrowserList extends StatefulWidget {
   const BrowserList({Key? key}) : super(key: key);
@@ -11,13 +12,6 @@ class BrowserList extends StatefulWidget {
 }
 
 class _BrowserListState extends State<BrowserList> {
-  List<Widget> newsList = [];
-  List<String> browserImages = [
-    'assets/images/img_bigone.jpg',
-    'assets/images/img_browser.jpg',
-    'assets/images/img_landscape.jpg'
-  ];
-
   @override
   void initState() {
     super.initState();
@@ -36,13 +30,10 @@ class _BrowserListState extends State<BrowserList> {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const Text(
-              "Browser",
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 18,
-                fontFamily: 'ABeeZee',
-              ),
+            CustomText(
+              text: 'Browser',
+              fontSize: 18,
+              fontWeight: FontWeight.w500,
             ),
             InkWell(
               onTap: () {},
@@ -64,7 +55,7 @@ class _BrowserListState extends State<BrowserList> {
     );
   }
 
-  manageList() {
+  void manageList() {
     for (int i = 0; i < browserImages.length; i++) {
       newsList
           .add(InkWell(onTap: () {}, child: browserContent(browserImages[i])));
