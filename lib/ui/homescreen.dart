@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:miniproject1/ui/export_ui.dart';
+import 'package:miniproject1/utils/export_utils.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -9,12 +10,10 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int _currentIndex = 0;
-  late List<Widget> _tabs;
   @override
   void initState() {
     super.initState();
-    _tabs = [
+    tabs = [
       const Home(),
       const Login(),
       const Registration(),
@@ -25,15 +24,15 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _tabs[_currentIndex],
+      body: tabs[currentIndex],
       bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _currentIndex,
+        currentIndex: currentIndex,
         type: BottomNavigationBarType.fixed,
         unselectedItemColor: Colors.grey,
         selectedItemColor: Colors.green,
         onTap: (int index) {
           setState(() {
-            _currentIndex = index;
+            currentIndex = index;
           });
         },
         items: const [
